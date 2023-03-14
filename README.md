@@ -149,6 +149,15 @@ Switch to [`components/Product/index.js`](./components/Product/index.js) and imp
 
 Switch to [`pages/[id].js`](./pages/%5Bid%5D.js) and write a `handleDeleteProduct` function:
 
+const response = await fetch(`/api/products/${id}`, {
+method: "DELETE})
+if (response.ok) {
+await response.json()
+push("/")
+} else {
+console.log("Error: ", response.status)
+}
+
 - _Wait_ for a `fetch()` with two arguments:
   - the url `/api/products/${id}` and
   - an options object `{ method: "DELETE" }`
